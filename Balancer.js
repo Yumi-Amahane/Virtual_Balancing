@@ -9,7 +9,9 @@ function shokika(){
 }
 
 function calc(){
+
   VBalance.omega=VBalance.omega-A*Math.sin(alpha+theta);
+  
   VBalance.omega*=VBalance.Loss;
   VBalance.theta+=VBalance.omega;
   
@@ -17,8 +19,9 @@ function calc(){
   document.getElementById("Status")="<br>omega="+VBalance.omega+"<br>Arg="+VBalance.alpha+"<br>theta="+VBalance.theta;
 }
 
-VBalance.interval=setinterval(calc,5);
-
+function Start(){
+  VBalance.interval=setinterval(calc,5);
+}
 
 window.ondeviceorientation=function(event){
 	VBalance.alpha=event.alpha;
