@@ -1,5 +1,5 @@
-
 var VBalance==VBalance||{};
+
 function shokika(){
   VBalance.theta=10;//Arg Balancer
   VBalance.alpha=10;//Arg gyro
@@ -9,9 +9,7 @@ function shokika(){
 }
 
 function calc(){
-
-  VBalance.omega=VBalance.omega-A*Math.sin(alpha+theta);
-  
+  VBalance.omega=VBalance.omega-A*Math.sin(VBalance.alpha+VBalance.theta);
   VBalance.omega*=VBalance.Loss;
   VBalance.theta+=VBalance.omega;
   
