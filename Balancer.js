@@ -9,7 +9,7 @@ function shokika(){
 }
 
 function calc(){
-  VBalance.omega=VBalance.omega-VBalance.A*Math.sin(VBalance.alpha+VBalance.theta);
+  VBalance.omega=VBalance.omega-VBalance.A*Math.sin((VBalance.alpha+VBalance.theta)/180*Math.PI);
   VBalance.omega*=VBalance.Loss;
   VBalance.theta+=VBalance.omega;
   
