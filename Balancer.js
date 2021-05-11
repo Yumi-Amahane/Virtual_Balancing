@@ -6,9 +6,15 @@ function shokika(){
   VBalance.omega=0;//Arg velocity
   VBalance.A=0.01;//Const $\frac{2mgy}{I}$
   VBalance.Loss=0.999;//Enegy loss const
+  
+  VBalance.Allow=0;
 }
 
 function calc(){
+
+  if (VBalance.Allow==1){
+  	VBalance.alpha=deviceOrientation(0);
+  }
   VBalance.omega-=VBalance.A*Math.sin((VBalance.alpha+VBalance.theta)/180*Math.PI);
   VBalance.omega*=VBalance.Loss;
   VBalance.theta+=VBalance.omega;
@@ -45,7 +51,8 @@ function picrotation(arg){
 
 function deviceOrientation(e){
 	e.preventDeafult();
-	VBalance.alpha=-1*event.alpha;
+	VBalance.alpha=-1*e.alpha;
+	return(-1*e.alpha);
 }
 
 
@@ -53,7 +60,8 @@ function ClickRequestDeviceSensor(){
   console.log("Allow");
   DeviceOrientationEvent.requestPermission().then( function( response ){
     if( response === 'granted' ){
-      window.addEventListener( "deviceorientation", deviceOrientation );
+      //window.addEventListener( "deviceorientation", deviceOrientation );
+      VBalance.Allow=1;
       document.getElementById("Permission").innerHTML="";
     }
   }).catch( function( e ){
