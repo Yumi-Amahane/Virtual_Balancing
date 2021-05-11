@@ -34,10 +34,11 @@ function Start(){
 function picrotation(arg){
 	
 }
+
 function deviceOrientation(event){
 	event.preventDeafult();
 	VBalance.alpha=-1*event.alpha;
-});
+}
 
 
 function ClickRequestDeviceSensor(){
