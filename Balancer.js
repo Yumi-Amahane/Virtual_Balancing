@@ -18,7 +18,7 @@ function calc(){
 }
 
 function Start(){
-  VBalance.interval=setinterval(calc,5);
+  VBalance.interval=setInterval(calc,5);
 }
 
 window.ondeviceorientation=function(event){
