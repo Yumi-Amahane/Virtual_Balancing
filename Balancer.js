@@ -26,15 +26,15 @@ function Start(){
 	if(window.DeviceOrientationEvent){
 		console.log("Event");
 		
-		//if(DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === 'function'){
+		if(DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === 'function'){
 			VBalance.bannar= '<a href="javascript:ClickRequestDeviceSensor();">Click to use gyro</a>';
 			//'<div  style="z-index: 1; position: absolute; width: 100%; background-color: rgb(0, 0, 0);" onclick="ClickRequestDeviceSensor();" id="sensorrequest"><p style="color: rgb(0, 0, 255);">センサーの有効化</p></div>';
 			console.log(VBalance.bannar);
 			
 			document.getElementById("Permission").innerHTML=VBalance.bannar;
-  		//}else{
+  		}else{
 			window.addEventListener("deviceorientation",deviceOrientation);
-		//}
+		}
 	}
 	VBalance.interval=setInterval(calc,50);
 }
@@ -50,7 +50,7 @@ function deviceOrientation(event){
 
 
 function ClickRequestDeviceSensor(){
-  console.log("Al");
+  console.log("Allow");
   //. ユーザーに「許可」を求めるダイアログを表示
   DeviceOrientationEvent.requestPermission().then( function( response ){
     if( response === 'granted' ){
