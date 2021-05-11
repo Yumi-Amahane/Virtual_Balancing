@@ -28,7 +28,7 @@ function Start(){
 		
 		if(DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === 'function'){
 			VBalance.bannar= '<div  style="z-index: 1; position: absolute; width: 100%; background-color: rgb(0, 0, 0);" onclick="ClickRequestDeviceSensor();" id="sensorrequest"><p style="color: rgb(0, 0, 255);">センサーの有効化</p></div>';
-			console.log("bannar");
+			console.log(VBalance.bannar);
 			
 			document.getElementById("Permission").innerHTML=VBalance.bannar;
   		}else{
