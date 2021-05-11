@@ -35,7 +35,19 @@ function Start(){
 			
 			document.getElementById("Permission").innerHTML=VBalance.bannar;
   		}else{
-			window.addEventListener("deviceorientation",deviceOrientation());
+  		
+  		
+			window.addEventListener("deviceorientation", function(event) {
+		        // alpha: rotation around z-axis
+		        VBalance.alpha = event.alpha;
+		        // gamma: left to right
+		        var leftToRight = event.gamma;
+		        // beta: front back motion
+		        var frontToBack = event.beta;
+
+		        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+		    }, true);
+		    	
 		}
 	}
 	VBalance.interval=setInterval(calc,50);
@@ -49,7 +61,6 @@ function deviceOrientation(e){
 	
 	e.preventDeafult();
 	VBalance.alpha=-1*e.alpha;
-	return(-1*alpha);
 }
 
 
@@ -57,7 +68,19 @@ function ClickRequestDeviceSensor(){
   console.log("Allow");
   DeviceOrientationEvent.requestPermission().then( function( response ){
     if( response === 'granted' ){
-      window.addEventListener( "deviceorientation", deviceOrientation() );
+      //window.addEventListener( "deviceorientation",deviceOrientation);
+      		window.addEventListener("deviceorientation", function(event) {
+		        // alpha: rotation around z-axis
+		        VBalance.alpha = event.alpha;
+		        // gamma: left to right
+		        var leftToRight = event.gamma;
+		        // beta: front back motion
+		        var frontToBack = event.beta;
+
+		        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+		    }, true);
+		    
+      
       document.getElementById("Permission").innerHTML="";
     }
   }).catch( function( e ){
