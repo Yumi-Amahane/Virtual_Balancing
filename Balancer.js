@@ -43,8 +43,8 @@ function picrotation(arg){
 	
 }
 
-function deviceOrientation(event){
-	event.preventDeafult();
+function deviceOrientation(e){
+	e.preventDeafult();
 	VBalance.alpha=-1*event.alpha;
 }
 
