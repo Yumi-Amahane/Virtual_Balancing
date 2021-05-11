@@ -51,13 +51,10 @@ function deviceOrientation(event){
 
 function ClickRequestDeviceSensor(){
   console.log("Allow");
-  //. ユーザーに「許可」を求めるダイアログを表示
   DeviceOrientationEvent.requestPermission().then( function( response ){
     if( response === 'granted' ){
-      //. 許可された場合のみイベントハンドラを追加できる
       window.addEventListener( "deviceorientation", deviceOrientation );
-      //. 画面上部のボタンを消す
-      $('#sensorrequest').css( 'display', 'none' );
+      document.getElementById("Permission").innerHTML="";
     }
   }).catch( function( e ){
     console.log( e );
