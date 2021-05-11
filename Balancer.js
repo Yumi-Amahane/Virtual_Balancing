@@ -17,7 +17,7 @@ function calc(){
   console.log(log);
   document.getElementById("Status").innerHTML=log;
   
-  picrotation(arg);
+  picrotation(VBalance.arg);
 }
 
 function Start(){
