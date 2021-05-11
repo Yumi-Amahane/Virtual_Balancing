@@ -11,10 +11,6 @@ function shokika(){
 }
 
 function calc(){
-
-  if (VBalance.Allow==1){
-  	VBalance.alpha=deviceOrientation(0);
-  }
   VBalance.omega-=VBalance.A*Math.sin((VBalance.alpha+VBalance.theta)/180*Math.PI);
   VBalance.omega*=VBalance.Loss;
   VBalance.theta+=VBalance.omega;
@@ -39,7 +35,7 @@ function Start(){
 			
 			document.getElementById("Permission").innerHTML=VBalance.bannar;
   		}else{
-			window.addEventListener("deviceorientation",deviceOrientation);
+			window.addEventListener("deviceorientation",deviceOrientation());
 		}
 	}
 	VBalance.interval=setInterval(calc,50);
@@ -50,9 +46,10 @@ function picrotation(arg){
 }
 
 function deviceOrientation(e){
+	
 	e.preventDeafult();
 	VBalance.alpha=-1*e.alpha;
-	return(-1*e.alpha);
+	return(-1*alpha);
 }
 
 
@@ -60,8 +57,7 @@ function ClickRequestDeviceSensor(){
   console.log("Allow");
   DeviceOrientationEvent.requestPermission().then( function( response ){
     if( response === 'granted' ){
-      //window.addEventListener( "deviceorientation", deviceOrientation );
-      VBalance.Allow=1;
+      window.addEventListener( "deviceorientation", deviceOrientation() );
       document.getElementById("Permission").innerHTML="";
     }
   }).catch( function( e ){
