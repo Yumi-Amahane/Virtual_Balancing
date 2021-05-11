@@ -13,8 +13,9 @@ function calc(){
   VBalance.omega*=VBalance.Loss;
   VBalance.theta+=VBalance.omega;
   
-  console.log("<br>omega="+VBalance.omega+"<br>Arg="+VBalance.alpha+"<br>theta="+VBalance.theta);
-  Document.getElementById("Status")="<br>omega="+VBalance.omega+"<br>Arg="+VBalance.alpha+"<br>theta="+VBalance.theta;
+  var log="<br>omega="+VBalance.omega+"<br>Arg="+VBalance.alpha+"<br>theta="+VBalance.theta;
+  console.log(log);
+  document.getElementById("Status").innerHTML=log;
 }
 
 function Start(){
