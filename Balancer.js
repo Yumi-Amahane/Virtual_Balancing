@@ -1,4 +1,4 @@
-var VBalance==VBalance||{};
+var VBalance=VBalance||{};
 
 function shokika(){
   VBalance.theta=10;//Arg Balancer
