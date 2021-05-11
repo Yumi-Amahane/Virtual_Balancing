@@ -14,7 +14,7 @@ function calc(){
   VBalance.theta+=VBalance.omega;
   
   var log="<br>omega="+VBalance.omega+"<br>alpha="+VBalance.alpha+"<br>theta="+VBalance.theta;
-  console.log(log);
+  //console.log(log);
   document.getElementById("Status").innerHTML=log;
   
   picrotation(VBalance.alpha+VBalance.theta);
@@ -24,6 +24,7 @@ function Start(){
 	if(window.DeviceOrientationEvent){
 		if(DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission==='fuction'){
 			VBalance.bannar= '<div  style="z-index: 1; position: absolute; width: 100%; background-color: rgb(0, 0, 0);" onclick="ClickRequestDeviceSensor();" id="sensorrequest"><p style="color: rgb(0, 0, 255);">センサーの有効化</p></div>';
+			console.log("bannar")
 			document.getElementById("Permission").innerHTML=VBalance.bannar;
   		}else{
 			window.addEventListener("deviceorientation",deviceOrientation);
