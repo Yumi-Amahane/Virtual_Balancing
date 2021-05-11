@@ -25,8 +25,9 @@ function Start(){
 		if(DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission==='fuction'){
 			VBalance.bannar= '<div  style="z-index: 1; position: absolute; width: 100%; background-color: rgb(0, 0, 0);" onclick="ClickRequestDeviceSensor();" id="sensorrequest"><p style="color: rgb(0, 0, 255);">センサーの有効化</p></div>';
     $('body').prepend( banner );
-  	}else{
-		window.addEventListener("deviceorientation",deviceOrientation);
+  		}else{
+			window.addEventListener("deviceorientation",deviceOrientation);
+		}
 	}
 	VBalance.interval=setInterval(calc,50);
 }
