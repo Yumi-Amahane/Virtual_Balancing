@@ -9,10 +9,11 @@ function shokika(){
 }
 
 function calc(){
-  VBalance.omega-=A*Math.sin(alpha+theta);
+  VBalance.omega=VBalance.omega-A*Math.sin(alpha+theta);
   VBalance.omega*=VBalance.Loss;
   VBalance.theta+=VBalance.omega;
   
+  console.log("<br>omega="+VBalance.omega+"<br>Arg="+VBalance.alpha+"<br>theta="+VBalance.theta);
   document.getElementById("Status")="<br>omega="+VBalance.omega+"<br>Arg="+VBalance.alpha+"<br>theta="+VBalance.theta;
 }
 
