@@ -72,7 +72,7 @@ function ClickRequestDeviceSensor(){
       		window.addEventListener("deviceorientation", function(event) {
 		        VBalance.alpha = event.alpha;
 		        VBalance.beta= event.beta;
-		        VBalance.gamma = event.gammaa;
+		        VBalance.gamma = event.gamma;
 
 		        handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
 		    }, true);
