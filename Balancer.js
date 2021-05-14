@@ -23,7 +23,7 @@ function calc(){
   //console.log(log);
   document.getElementById("Status").innerHTML=log;
   
-  picrotation(VBalance.arg);
+  picrotation(VBalance.theta);
 }
 
 function Start(){
