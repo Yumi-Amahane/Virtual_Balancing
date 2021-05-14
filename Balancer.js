@@ -61,9 +61,9 @@ function picrotation(arg){
 
 	VBalance.context.clearRect(0,0,VBalance.canvas.width,VBalance.canvas.height);
 	VBalance.context.translate(VBalance.canvas.width/2,VBalance.canvas.height/2);
-	VBalance.context.rotate(-x/100);
+	VBalance.context.rotate(-arg/100);
 	VBalance.context.drawImage(VBalance.image,-VBalance.canvas.width/2,-VBalance.canvas.height/2,VBalance.canvas.width,VBalance.canvas.height);
-	VBalance.context.rotate(x/100);
+	VBalance.context.rotate(arg/100);
 	VBalance.context.translate(-VBalance.canvas.width/2,-VBalance.canvas.height/2);
 }
 
