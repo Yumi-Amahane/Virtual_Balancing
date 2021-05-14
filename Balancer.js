@@ -57,7 +57,7 @@ function Start(){
 function picrotation(arg){
 	VBalance.image=document.getElementById("BalancerImg");
 	VBalance.canvas=document.getElementById("Balancer");
-	VBalance.context=canvas.getContext("2d");
+	VBalance.context=VBalance.canvas.getContext("2d");
 
 	context.clearRect(0,0,VBalance.canvas.width,VBalance.canvas.height);
 	context.translate(VBalance.canvas.width/2,VBalance.canvas.height/2);
