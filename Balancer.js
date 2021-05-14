@@ -23,7 +23,7 @@ function calc(){
   //console.log(log);
   document.getElementById("Status").innerHTML=log;
   
-  picrotation(VBalance.theta);
+  picrotation(-1*VBalance.theta);
 }
 
 function Start(){
@@ -51,7 +51,7 @@ function Start(){
 		    	
 		}
 	}
-	VBalance.interval=setInterval(calc,50);
+	VBalance.interval=setInterval(calc,5);
 }
 
 function picrotation(arg){
